@@ -1,0 +1,630 @@
+/********************** styles for skill table ***************************/
+.abilities table {     
+	 font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 24px;
+    width: 100%;
+    text-align: left;
+    border-spacing: 25px;
+    table-layout: auto;
+    padding: 25px;
+    border-collapse: collapse;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  color: black;
+}
+
+.abilities th{     
+   font-size: 20px;
+  font-weight: normal;
+  background: #FF0000;
+  overflow: auto;
+  border-top: 4px solid #D00000;
+  border-bottom: 1px solid #D00000;
+  color: #FFFFFF;
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.abilities td {    
+  font-size: 18px;
+  text-align: left;
+  background: #FFFFFF;
+  color: #5C5C5C;
+  border-top: 1px solid transparent;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-spacing: 10px;
+  padding: 10px;
+}
+
+tr:hover td { 
+	background: #E4DFDF;
+	color: #000000;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray; 
+}
+
+/************************* styles for background *********************/
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url("https://wallpapercave.com/wp/wp2432970.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/*********************** styles for new abilities modal ***************/
+.edit input {
+  max-width: 40px;
+  max-height: 40px;
+  position: absolute;
+  margin-left: 1280px;
+  margin-top: 2px;
+}
+
+/*********************** Styles for headboard ************************/
+
+.title { 
+	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+	color: #ffffff;
+	width: 98%;
+	height: 500;
+	margin-left: 0px; 
+	font-size: 18px; 
+	font-weight: 400; 
+	text-align: center; 
+	background: #FF0000; 
+	margin: 0 0 0px; 
+	overflow: hidden; 
+	padding: 10px; 
+	border-radius: 35px 0px 35px 0px; 
+	-moz-border-radius: 35px 0px 35px 0px; 
+	-webkit-border-radius: 35px 0px 35px 0px; 
+	border: 5px solid #D00000;
+	background-color: rgba(255, 0, 0, 0.7);
+}
+
+/****************** Styles for the navigation menu *********************/
+
+.spaner {
+	font-size:40px;
+	margin-left: 10px;
+	cursor:pointer;
+	margin-top: 0;
+	position: absolute;  
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/************************ Styles for a modal *************************/
+.modalContainer {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  padding-top: 25px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  transition-duration: 1s;
+  transition-delay: 1s;
+  border: 20px 20px 20px 20px;
+   max-width: 100%;
+   font-size: 16px;
+
+}
+
+.modalContainer .modal-content {
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;;
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 20px;
+  color: white;
+  padding: 10px;
+  border: 5px solid red;
+  border-top: 5px solid red;
+  width: 60%;
+  transition-delay: 1s;
+  transition-duration: 1s;
+  border-radius: 20px 20px 20px 20px;
+  max-width: 100%;
+  font-size: 16px;
+  background-image: url("../img/wallpapers/balls.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.ModalTitle span {
+  color: white;
+  float: right;
+  position: absolute;
+  top: 3.5%;
+  right: 0%;
+  font-size: 40px;
+  font-weight: bold;
+  width: 50px;
+  transition-delay: 1s;
+  transition-duration: 2s;
+}
+
+.modalContainer .button {
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  background-color: #1BA225;
+  border: 1px solic #0CA017;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.modalContainer .button:hover {
+  background-color: #0C7814;
+}
+
+.modal-content textarea {
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;;
+  font-size: 16px;
+  height: 10em;
+  width: 600px;
+  margin-left: 150px;
+  position: absolute;
+  resize: none;
+  align-content: center;
+  max-width: 100%;
+  border-radius: 10px 10px 10px 10px;
+  border-color: red;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  color: black;
+}
+
+.modal-content text {
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: normal;
+  width: 780px;
+}
+
+.modal-content label {
+  display: inline-block;
+  font-weight: bold;
+  width: 150px;
+}
+
+.modalContent button {
+  width: 50%;
+  cursor: pointer;
+}
+
+.modal-content button {
+  width: 300px;
+  cursor: pointer;
+}
+
+.modalContainer .close {
+    transition: transform .2s; 
+}
+ 
+.modalContainer .close:hover {
+    transform: scale(1.5); 
+}
+
+.abilitie_input label {
+  font-size: 16px;
+}
+
+.abilitie_input input{
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;;
+  color: black;
+  margin-top: 25px;
+  font-size: 18px;
+  width: 100px;
+  height: 40px;
+  font-weight: normal;
+  border-radius: 10px 10px 10px 10px;
+  border-color: red;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.ModalTitle {
+  background-color: white;
+  padding: 10;
+  align-items: center;
+  font-size: 40px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  margin-top: -5px;
+  width: 823px;
+  height: 90px;
+  align-content: center;
+
+}
+
+.ModalTitle h2 {
+  font-size: 40px;
+  margin-top: -25px;
+}
+
+.abilitie_input {
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  width: 823px;
+  height: 100px;
+}
+
+.abilitie_textarea {
+  background-color: white;
+  font-size: 16px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  width: 823px;
+  height: 220px;
+  align-content: center;
+}
+
+.abilitie_textarea label {
+  position: absolute;
+  margin-top: 70px;
+  
+}
+
+
+.abilitie_textarea p {
+  font-weight: bold;
+}
+
+.abilitie_input p {
+  font-weight: bold;
+  
+}
+
+.abilitie_input .p_name {
+  margin-left: 500px;
+  margin-top: -50px;
+}
+
+.abilitie_textarea .p_description {
+  margin-left: 500px;
+  margin-top: 25px; 
+}
+
+/************************* Styles for a Navbar **************************/
+
+.navBar li {
+  background-color: #5CB4FE; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+}
+
+.navBar a{
+  font color: #FFFFFF;
+  text-decoration: none;
+
+}
+
+.navBar img {
+  width: 30px;
+  margin-top: 10%;
+  margin-left: 10%;
+  height: 30px;
+  color: white;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Cabin:400);
+
+.webdesigntuts-workshop:before,
+.webdesigntuts-workshop:after {
+
+  content: '';
+  display: block; 
+  height: 1px;
+  left: 50%;
+  margin: 0 0 0 -400px;
+  position: absolute;
+  width: 800px;
+}
+
+
+.webdesigntuts-workshop form {
+  background: #111;
+  background-size: cover;
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px #272727;
+  display: inline-block;
+  font-size: 0px;
+  margin: 150px auto 0;
+  padding: 20px;
+  position: relative;
+  z-index: 0;
+  margin-top: 20px;
+  width: 97%;;
+  height: 100%;;
+}
+
+.webdesigntuts-workshop input {
+  background: #222;
+  background: -webkit-linear-gradient(#333, #222);  
+  background: -moz-linear-gradient(#333, #222); 
+  background: -o-linear-gradient(#333, #222); 
+  background: -ms-linear-gradient(#333, #222);  
+  background: linear-gradient(#333, #222);  
+  border: 1px solid #444;
+  border-radius: 5px 0 0 5px;
+  box-shadow: 0 2px 0 #000;
+  color: #888;
+  display: block;
+  float: left;
+  font-family: 'Cabin', helvetica, arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 40px;
+  margin: 0;
+  padding: 0 10px;
+  text-shadow: 0 -1px 0 #000;
+  width: 200px;
+  margin-left: 995px;
+  max-width: 100%;
+  position: static;
+}
+
+.ie .webdesigntuts-workshop input {
+  line-height: 40px;
+  max-width: 100%;
+}
+
+.webdesigntuts-workshop input::-webkit-input-placeholder {
+   color: #888;
+}
+
+.webdesigntuts-workshop input:-moz-placeholder {
+   color: #888;
+}
+
+.webdesigntuts-workshop input:focus {
+  -webkit-animation: glow 800ms ease-out infinite alternate;
+  -moz-animation: glow 800ms ease-out infinite alternate;
+  -o-animation: glow 800ms ease-out infinite alternate;
+  -ms-animation: glow 800ms ease-out infinite alternate;
+  animation: glow 800ms ease-out infinite alternate;
+  background: #222922;
+  background: -webkit-linear-gradient(#333933, #222922);
+  background: -moz-linear-gradient(#333933, #222922);
+  background: -o-linear-gradient(#333933, #222922);
+  background: -ms-linear-gradient(#333933, #222922);
+  background: linear-gradient(#333933, #222922);
+  border-color: #393;
+  box-shadow: 0 0 5px rgba(239,3,3,.2), inset 0 0 5px rgba(239,3,3,.1), 0 2px 0 #000;
+  color: #efe;
+  outline: none;
+  max-width: 100%;
+}
+
+.webdesigntuts-workshop input:focus::-webkit-input-placeholder { 
+  color: #efe;
+}
+
+.webdesigntuts-workshop input:focus:-moz-placeholder {
+  color: #efe;
+}
+
+.webdesigntuts-workshop button {
+  background: #222;
+  background: -webkit-linear-gradient(#333, #222);
+  background: -moz-linear-gradient(#333, #222);
+  background: -o-linear-gradient(#333, #222);
+  background: -ms-linear-gradient(#333, #222);
+  background: linear-gradient(#333, #222);
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  border: 1px solid #444;
+  border-left-color: #000;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 2px 0 #000;
+  color: #fff;
+  display: block;
+  float: left;
+  font-family: 'Cabin', helvetica, arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-shadow: 0 -1px 0 #000;
+  width: 80px;
+  max-width: 100%;
+  cursor: pointer;
+} 
+
+.webdesigntuts-workshop button:hover,
+.webdesigntuts-workshop button:focus {
+  background: #292929;
+  background: -webkit-linear-gradient(#393939, #292929);  
+  background: -moz-linear-gradient(#393939, #292929); 
+  background: -o-linear-gradient(#393939, #292929); 
+  background: -ms-linear-gradient(#393939, #292929);  
+  background: linear-gradient(#393939, #292929);
+  color: red;
+  outline: none;
+}
+
+.webdesigntuts-workshop button:active {
+  background: red;
+  background: -webkit-linear-gradient(#393939, #292929);
+  background: -moz-linear-gradient(#393939, #292929);
+  background: -o-linear-gradient(#393939, #292929);
+  background: -ms-linear-gradient(#393939, #292929);
+  background: linear-gradient(#393939, #292929);
+  box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+  top: 1px;
+}
+
+.webdesigntuts-workshop .add {
+  background: #222;
+  background: -webkit-linear-gradient(#333, #222);
+  background: -moz-linear-gradient(#333, #222);
+  background: -o-linear-gradient(#333, #222);
+  background: -ms-linear-gradient(#333, #222);
+  background: linear-gradient(#333, #222);
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  border: 1px solid #444;
+  border-left-color: #000;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 2px 0 #000;
+  color: #fff;
+  z-index: 0;
+  display: block;
+  float: left;
+  font-family: 'Cabin', helvetica, arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 38px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-shadow: 0 -1px 0 #000;
+  width: 200px;
+  margin-top: -65px;
+  margin-left: 800px;
+  cursor: pointer;
+}
+
+.home img{
+  position: absolute;
+  width: 55px;
+  top: 20px;
+  height: 45px;
+  right: 20px;
+}
+
+.home img:hover {
+  transform: scale(1.5);
+}  
+
+@-webkit-keyframes glow {
+    0% {
+    border-color: red;
+    box-shadow: 0 0 5px rgba(239,3,3,.2), inset 0 0 5px rgba(239,3,3,.1), 0 2px 0 #000;
+    } 
+    100% {
+    border-color: red;
+    box-shadow: 0 0 20px rgba(239,3,3,.6), inset 0 0 10px rgba(239,3,3,.4), 0 2px 0 #000;
+    }
+}
+
+@-moz-keyframes glow {
+    0% {
+    border-color: red;
+    box-shadow: 0 0 5px rgba(239,3,3,.2), inset 0 0 5px rgba(239,3,3,.1), 0 2px 0 #000;
+    } 
+    100% {
+    border-color: red;
+    box-shadow: 0 0 20px rgba(239,3,3,.6), inset 0 0 10px rgba(239,3,3,.4), 0 2px 0 #000;
+    }
+}
+
+@-o-keyframes glow {
+    0% {
+    border-color: red;
+    box-shadow: 0 0 5px rgba(239,3,3,.2), inset 0 0 5px rgba(239,3,3,.1), 0 2px 0 #000;
+    } 
+    100% {
+    border-color: red;
+    box-shadow: 0 0 20px rgba(239,3,3,.6), inset 0 0 10px rgba(239,3,3,.4), 0 2px 0 #000;
+    }
+}
+
+@-ms-keyframes glow {
+    0% {
+    border-color: red;
+    box-shadow: 0 0 5px rgba(239,3,3,.2), inset 0 0 5px rgba(239,3,3,.1), 0 2px 0 #000;
+    } 
+    100% {
+    border-color: red;
+    box-shadow: 0 0 20px rgba(239,3,3,.6), inset 0 0 10px rgba(239,3,3,.4), 0 2px 0 #000;
+    }
+}
+
+@keyframes glow {
+    0% {
+    border-color: red;
+    box-shadow: 0 0 5px rgba(239,3,3,.2), inset 0 0 5px rgba(239,3,3,.1), 0 2px 0 #000;
+    } 
+    100% {
+    border-color: red;
+    box-shadow: 0 0 20px rgba(239,3,3,.6), inset 0 0 10px rgba(239,3,3,.4), 0 2px 0 #000;
+    }
+}

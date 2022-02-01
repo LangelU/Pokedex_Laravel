@@ -1,0 +1,101 @@
+Diario de desarrollo
+
+**************************** Versión 1.0.0 ************************************
+1.0) Requerimientos:
+
+
+1.1) Se mostrará una vista con una lista de imágenes de cada pokémon
+1.2) Al seleccionar un pokémon, la vista debe mostrar los siguientes datos:
+	- Número
+	- Nombre
+	- Imágen correspondiente
+	- Tipo primario
+	- Tipo secundario (Si tiene)
+	- Título
+	- Altura en metros
+	- Peso en Kilogramos
+	- Descripción
+	- Género
+	- Tasa de captura
+	- Grupo huevo
+	- Habilidades
+	- Estadísticas
+		- Salud
+		- Ataque
+		- Defensa
+		- Ataque especial
+		- Defensa especial
+		- Velocidad
+		- Total
+	- Pre-evolución si la tiene
+	- Evolución si la tiene
+	- Mega evolución si la tiene
+1.3) Para las estadísticas se implementarán barras para darle una visualización más gráfica
+1.4) Las pre-evoluciones, megas, y evoluciones se mostrarán con imágenes
+1.5) El color del banner, así como del recuadro que encierre la imágen, deberán cambiar de color en función del tipo principal del pokémon mostrado
+1.6) La vista principal tendrá una barra para búsqueda por número
+1.7) La vista principal tendrá una barra para búsqueda por nombre
+1.8) La vista principal contendrá un filtro para cada tipo
+1.9) Solo se permitirá un máximo de 2 filtros activos simultáneamente
+1.10) Si existen 2 filtros activos, los demás se deshabilitarán hasta que se libere uno
+1.11) Filtrar de mayor número a menor
+1.12) Filtrar de menor número a mayor
+
+2.0) Base de datos
+Se implementarán 1 base de datos, que contendrá originalmente 3 tablas: una para almacenar a los pokémon, otra para almacenar las habilidades y una tercera para almacenar los tipos.
+
+2.1 tabla: pokemons
+	ID 					(autoincrement)
+	number 				(int)
+	name 				(string 20)
+	img 				(por definir)
+	primary_type 		(FK types)
+	secondary_type 		(FK types)
+	title 				(string 50)
+	height				(int)
+	weight				(int)
+	description			(string 500)
+	gender				(string 50)
+	catch_rate			(string 50)
+	egg_group			(string 50)
+	ability_1			(FK skills)
+	ability_2			(FK skills)
+	hidden_ability_1	(FK skills)
+	hidden_ability_2	(FK skills)
+	mega_ability		(FK skills)
+	hp					(int)
+	attack				(int)
+	defense				(int)
+	special_attack		(int)
+	special_defense		(int)
+	seed				(int)
+	total				(int)
+	pre_evolution		(string)
+	evolution 			(string)
+	mega_evolution		(string)	
+
+2.2 tabla: abilities
+	ID 					(autoincrement)
+	name 				(string 20)
+	description 		(string 500)
+
+2.3 tabla: types
+	ID 					(autoincrement)
+	name 				(string)
+
+
+
+            $table->unsignedBigInteger('primary_type');
+            $table->foreign('primary_type')->references('id')->on('types');
+            $table->unsignedBigInteger('secondary_type');
+            $table->foreign('secondary_type')->references('id')->on('types');
+            $table->unsignedBigInteger('ability_1');
+            $table->foreign('ability_1')->references('id')->on('abilities');
+            $table->unsignedBigInteger('ability_2');
+            $table->foreign('ability_2')->references('id')->on('abilities');
+            $table->unsignedBigInteger('hidden_ability_1');
+            $table->foreign('hidden_ability_1')->references('id')->on('abilities');
+            $table->unsignedBigInteger('hidden_ability_2');
+            $table->foreign('hidden_ability_2')->references('id')->on('abilities');
+            $table->unsignedBigInteger('mega_ability');
+            $table->foreign('mega_ability')->references('id')->on('abilities');

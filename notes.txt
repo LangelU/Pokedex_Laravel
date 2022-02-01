@@ -1,0 +1,114 @@
+Consulta tipos de pokémon
+SELECT p.name, t.name as tipoUno,
+(SELECT t.name FROM pokemon p
+ LEFT JOIN types t 
+ ON p.secondary_type = t.id) AS tipoDos
+ FROM pokemon p
+ LEFT JOIN types t 
+ ON p.primary_type = t.id
+
+
+Consulta todas las habilidades a partir de id
+SELECT abilities_ones.name AS a, abilities_twos.name AS b, abilities_threes.name AS c, abilities_fours.name AS d, abilities_fives.name AS e
+FROM abilities_ones, abilities_twos, abilities_threes, abilities_fours, abilities_fives
+WHERE abilities_ones.id = 1
+
+Consulta para numero, nombre y tipos
+SELECT p.number, p.name, pt.name as TipoUNO, st.name AS TipoDOS
+FROM pokemon p, primary_types pt, secondary_types st
+WHERE p.primary_type = pt.id AND p.secondary_type = st.id
+
+consulta para numero, nombre y tipos semi terminada
+SELECT p.number, p.name, pt.name, st.name
+FROM pokemon p
+JOIN primary_types pt ON p.primary_type = pt.id 
+JOIN secondary_types st ON p.secondary_type = st.id
+
+
+Insert bulbasaur
+INSERT INTO `pokemon`(`number`, `name`, `title`, `primary_type`, `secondary_type`, `height`, `weight`, `description`, `gender`, `catch_rate`, `egg_group`, `hp`, `attack`, `defense`, `special_attack`, `special_defense`, `speed`, `total`, `evolution`, `ability_1`, `hidden_ability_1`) VALUES ('001', 'Bulbasaur', 'Pokémon semilla', '6', '7', '0.71', '6.9', 'A Bulbasaur es fácil verle echándose una siesta al sol. La semilla que tiene en el lomo va creciendo cada vez más a medida que absorbe los rayos del sol.' '87.5% masculino, 12.5% femenino', '5.9% usando pokéball con salud completa', 'Planta, Monstruo', '45', '49', '49', '65', '65', '45', '318', 'Ivysaur', '1', '2' )
+
+insert ivysaur
+INSERT INTO `pokemon`(`number`, `name`, `title`, `primary_type`, `secondary_type`, `height`, `weight`, `description`, `gender`, `catch_rate`, `egg_group`, `hp`, `attack`, `defense`, `special_attack`, `special_defense`, `speed`, `total`, `pre_evolution`, `evolution`,`ability_1`,`hidden_ability_1`) VALUES ('002', 'Ivysaur', 'Pokémon semilla', '6', '7', '0.99', '13.0', 'Este Pókemon lleva un bulbo en el lomo y, para poder con su peso, tiene unas patas y un tronco gruesos y fuertes. Si empieza a pasar más tiempo al sol, será porque el bulbo está a punto de hacerse una flor grande.' , '87.5% masculino, 12.5% femenino', '5.9% usando una pokéball con salud completa', 'Planta, Monstruo', '60', '62', '63', '80', '80', '60', '405', 'Bulbasaur', 'Venusaur', '1', '2' )
+
+
+
+
+
+Select datos pokemon y tipos (FUNCIONAL)
+
+SELECT p.number AS p_numer, p.name AS p_name, p.title AS p_title, pt.name AS p_type, st.name AS s_type, p.height as p_heigth,
+p.weight AS p_weight, p.description AS p_description, p.gender AS p_gender, p.catch_rate AS p_catch, p.egg_group AS p_eggroup,
+p.hp AS p_hp, p.attack as p_atk, p.defense AS p_def, p.special_attack AS p_satk, p.special_defense AS p_sdef, p.speed AS p_speed,
+p.total AS p_total, p.pre_evolution AS p_preevo, p.evolution AS p_evo, p.mega_evolution AS p_mega
+FROM pokemon p, primary_types pt, secondary_types st
+WHERE (p.primary_type = pt.id AND p.secondary_type = st.id) 
+AND (p.number = 002)
+
+
+
+.box {border: 1px solid black}
+.row {display: flex}
+.col {-ms-flex-preferred-size: 0; flex-basis: 0; -ms-flex-positive: 1; flex-grow: 1; max-width: 100%;}
+<div class="row">
+  <div class="box col">HOLA SOY UN DIV 1</div>
+  <div class="box col">HOLA SOY UN DIV 2</div>
+  <div class="box col">HOLA SOY UN DIV 3</div>
+</div>
+
+.detailedInfo-Content  {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  background-color:white;
+  border-radius: 10px 0px 0px 10px;
+  text-align: left;
+  background-color: red;
+}
+
+.evolutions-Content {
+  float: right;
+  width: 20%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  background-color: white;
+  border-radius: 0px 10px 10px 0px;
+  text-align: left;
+  background-color: blue;
+}
+
+.abilities-Content {
+  float: left;
+  width: 80%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  background-color: white;
+  text-align: center;
+  background-color: green;
+}
+
+
+SELECT *,
+COALESCE(p.pre_evolution_name, 'No registra') AS pre_Evo_name,
+COALESCE(p.pre_evolution_number, '000') AS pre_Evo_number,
+COALESCE(p.evolution_name, 'No registra') AS evo_name,
+COALESCE(p.evolution_number, '000') AS evo_number,
+COALESCE(p.mega_evolution_name, 'No registra') AS mega_Evo_name,
+COALESCE(p.mega_evolution_number, '000') AS mega_Evo_number
+FROM pokemon p
+WHERE p.id = 1
+
+
+
+
+
+        <select name="type_filter" id="type_filter">
+            <?php
+              $connection =  mysqli_connect("localhost", "root", "", "pokedex_bd"); 
+              $sql = mysqli_query($connection, "SELECT id, name FROM types");
+              while ($row = $sql->fetch_assoc()){
+              echo "<option value=\"". $row['name']. "\">" . $row['name'] . "</option>";
+              }
+            ?>
+        </select>
